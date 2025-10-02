@@ -1,2 +1,2 @@
 # oracion-Ignaciana
-oracion ignacian
+oracion ignaciana

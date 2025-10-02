@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Espirituales y el Examen</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Estilos personalizados para un mejor look and feel */
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #f7f7f7;
+        }
+        .step-container {
+            transition: all 0.3s ease-in-out;
+            border-left: 4px solid #3b82f6; /* Azul de énfasis */
+        }
+        .step-container.active {
+            border-left: 4px solid #10b981; /* Verde al estar activo */
+            background-color: #ecfdf5;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+
+    <header class="text-center mb-10">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-900 mb-2">Ejercicios Espirituales Ignacianos</h1>
+        <p class="text-xl text-gray-600">Una Guía para el Discernimiento y la Oración Diaria</p>
+    </header>
+
+    <main class="max-w-4xl mx-auto space-y-12">
+
+        <!-- Sección de Explicación General de los Ejercicios -->
+        <section class="p-6 bg-white rounded-xl shadow-lg">
+            <h2 class="text-3xl font-bold text-blue-800 mb-4 border-b pb-2">El Camino de San Ignacio</h2>
+            <p class="text-gray-700 mb-4">
+                Los Ejercicios Espirituales son un conjunto de meditaciones, oraciones y reglas ideados por San Ignacio de Loyola para ayudar a la persona a **encontrar y hacer la voluntad de Dios** en su vida. Su objetivo es alcanzar la **libertad espiritual** y ordenar la vida, venciendo los apegos o "afecciones desordenadas".
+            </p>
+            <div class="space-y-3 text-sm text-gray-600 p-4 border rounded-lg bg-blue-50">
+                <p><strong>El Plan de 4 Semanas:</strong></p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>**Primera Semana:** Misericordia y confrontación con el pecado.</li>
+                    <li>**Segunda Semana:** Contemplación de la vida de Jesús y la llamada a seguirlo.</li>
+                    <li>**Tercera Semana:** Meditación de la Pasión y la Cruz.</li>
+                    <li>**Cuarta Semana:** Gozo de la Resurrección y servicio en el mundo.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección Interactiva del Examen -->
+        <section class="p-6 bg-white rounded-xl shadow-lg">
+            <h2 class="text-3xl font-bold text-blue-800 mb-4 border-b pb-2">La Oración del Examen</h2>
+            <p class="text-gray-700 mb-6">
+                El Examen es una oración diaria y reflexiva, una práctica sencilla que cambia la vida. Es un momento para **ver cómo Dios actúa en tu día**. Se recomienda hacerlo al menos dos veces al día: tarde y noche, antes de acostarse.
+            </p>
+
+            <div class="space-y-4" id="examen-steps">
+                <!-- Paso 1 -->
+                <div class="step-container p-4 bg-gray-50 rounded-lg shadow-sm">
+                    <button class="flex justify-between items-center w-full font-semibold text-lg text-gray-800 focus:outline-none" onclick="toggleStep(1)">
+                        <span>1. Ponte en la presencia de Dios y Agradece</span>
+                        <span id="icon-1" class="text-xl text-blue-500 transition-transform duration-300 transform">+</span>
+                    </button>
+                    <div id="content-1" class="prayer-content mt-2 hidden text-gray-600 pt-2 border-t border-gray-200">
+                        <p>Ponte en la presencia de Dios. Agradece su gran amor por ti. Agradece los dones que ha derramado sobre ti.</p>
+                    </div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="step-container p-4 bg-gray-50 rounded-lg shadow-sm">
+                    <button class="flex justify-between items-center w-full font-semibold text-lg text-gray-800 focus:outline-none" onclick="toggleStep(2)">
+                        <span>2. Pide Luz para comprender el día</span>
+                        <span id="icon-2" class="text-xl text-blue-500 transition-transform duration-300 transform">+</span>
+                    </button>
+                    <div id="content-2" class="prayer-content mt-2 hidden text-gray-600 pt-2 border-t border-gray-200">
+                        <p>Pide luz, iluminación. Ora y pide la gracia de comprender cómo actuó y actúa Dios en tu vida. La gracia de ver y reflejar la verdad, la belleza y la humanidad.</p>
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="step-container p-4 bg-gray-50 rounded-lg shadow-sm">
+                    <button class="flex justify-between items-center w-full font-semibold text-lg text-gray-800 focus:outline-none" onclick="toggleStep(3)">
+                        <span>3. Revisa tu día (La memoria)</span>
+                        <span id="icon-3" class="text-xl text-blue-500 transition-transform duration-300 transform">+</span>
+                    </button>
+                    <div id="content-3" class="prayer-content mt-2 hidden text-gray-600 pt-2 border-t border-gray-200">
+                        <p>Revisa tu día: recuerda momentos específicos y cómo te sentiste en ese momento. Pregúntate qué hiciste, dijiste o pensaste y si esas acciones te acercaron o alejaron de Dios.</p>
+                    </div>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="step-container p-4 bg-gray-50 rounded-lg shadow-sm">
+                    <button class="flex justify-between items-center w-full font-semibold text-lg text-gray-800 focus:outline-none" onclick="toggleStep(4)">
+                        <span>4. Reflexiona, Pide Perdón y Perdónate</span>
+                        <span id="icon-4" class="text-xl text-blue-500 transition-transform duration-300 transform">+</span>
+                    </button>
+                    <div id="content-4" class="prayer-content mt-2 hidden text-gray-600 pt-2 border-t border-gray-200">
+                        <p>Reflexiona sobre lo que hiciste, dijiste o pensaste en esos momentos. ¿Te acercaste o te alejaste de Dios? Pide perdón en caso necesario.</p>
+                    </div>
+                </div>
+
+                <!-- Paso 5 -->
+                <div class="step-container p-4 bg-gray-50 rounded-lg shadow-sm">
+                    <button class="flex justify-between items-center w-full font-semibold text-lg text-gray-800 focus:outline-none" onclick="toggleStep(5)">
+                        <span>5. Mira hacia el mañana (El Propósito)</span>
+                        <span id="icon-5" class="text-xl text-blue-500 transition-transform duration-300 transform">+</span>
+                    </button>
+                    <div id="content-5" class="prayer-content mt-2 hidden text-gray-600 pt-2 border-t border-gray-200">
+                        <p>Piensa en cómo podrías colaborar más eficazmente con el plan de Dios. Sé específico y concluye con un Padrenuestro.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="max-w-4xl mx-auto mt-10 text-center text-sm text-gray-500 p-4 border-t">
+        <p>© Inspirado en los Ejercicios Espirituales de San Ignacio de Loyola.</p>
+    </footer>
+
+    <script>
+        /**
+         * Función para alternar la visibilidad del contenido de un paso del Examen.
+         * @param {number} stepNumber - El número del paso (1 a 5).
+         */
+        function toggleStep(stepNumber) {
+            const content = document.getElementById(`content-${stepNumber}`);
+            const icon = document.getElementById(`icon-${stepNumber}`);
+            const container = content.parentElement;
+            
+            // Ocultar todos los demás pasos y quitar la clase 'active'
+            document.querySelectorAll('.prayer-content').forEach(c => {
+                if (c.id !== `content-${stepNumber}`) {
+                    c.classList.add('hidden');
+                    c.parentElement.classList.remove('active');
+                }
+            });
+            document.querySelectorAll('[id^="icon-"]').forEach(i => {
+                 if (i.id !== `icon-${stepNumber}`) {
+                    i.textContent = '+';
+                    i.classList.remove('rotate-45');
+                }
+            });
+
+            // Alternar el paso actual
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                container.classList.add('active');
+                icon.textContent = 'x';
+                icon.classList.add('rotate-45');
+            } else {
+                content.classList.add('hidden');
+                container.classList.remove('active');
+                icon.textContent = '+';
+                icon.classList.remove('rotate-45');
+            }
+        }
+    </script>
+</body>
+</html>
